@@ -1,0 +1,12 @@
+le if traite les situations particulières. Il fait uniquement les situations unique.
+
+else le cas le plus général 
+
+ 
+Dans un bar si j'ai 18 ans je rentre sinon je ne rentre pas. Donc le si est à 18 et le else c'est pour le reste.
+
+3étapes
+
+créer l'élément
+récupérer/ créer l'élément à modifier
+le remettre dans la page si je l'ai créer. le mettre dans la page.

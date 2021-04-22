@@ -1,0 +1,159 @@
+* {
+  margin: 1rem auto;
+  padding: 0;
+  font-family: "Raleway", "sans-serif";
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f0f7eeff;
+}
+
+main {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Raleway", "sans-serif";
+}
+
+.logo {
+  width: 10rem;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  margin: 3rem 0;
+}
+
+.tableau__panier {
+  display: flex;
+  justify-content: space-around;
+}
+
+.tableau__panier p {
+  font-size: large;
+  width: 10rem;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.produit__panier {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: small;
+}
+
+.produit__panier p {
+  width: 10rem;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0;
+  background-color: #91a8a4ff;
+}
+
+.about {
+  display: grid;
+  margin-left: 10rem;
+  align-items: center;
+}
+
+.help {
+  display: grid;
+  margin-right: 10rem;
+}
+
+.image__product {
+  margin: 2rem;
+  height: 15rem;
+  width: 25rem;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 850px) {
+  .footer {
+    display: flex;
+    flex-direction: column;
+    font-size: 13px;
+  }
+
+  .help {
+    display: grid;
+    margin: 0;
+    align-items: center;
+  }
+
+  .about {
+    display: grid;
+    margin: 0;
+    align-items: center;
+  }
+
+  .name {
+    font-size: 13px;
+  }
+
+  .btn {
+    font-size: 70%;
+    margin: 0px;
+  }
+
+  h1 {
+    font-size: 1rem;
+    text-align: center;
+  }
+}
+
+.panier__vide {
+  display: flex;
+  justify-content: center;
+  height: 15rem;
+  width: auto;
+  object-fit: cover;
+}
+
+.prix__total {
+  margin: 2rem 1rem;
+}
+
+/* Formulaire */
+
+.container___formulaire {
+  max-width: 400px;
+  margin: 2rem auto;
+  padding: 1rem 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  text-align: center;
+  border-radius: 1rem;
+  box-sizing: border-box;
+}
+
+.container___formulaire h1 {
+  text-align: center;
+  margin: 0;
+}
+
+input {
+  width: 12rem;
+  outline: none;
+  height: 1.5rem;
+}
+
+.button {
+  cursor: pointer;
+}
