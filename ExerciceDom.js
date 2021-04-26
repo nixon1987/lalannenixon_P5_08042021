@@ -1,5 +1,7 @@
 main();
 
+// --------------------------------Appel des données ------------------------------------//
+
 async function main() {
   let articles = await getArticles();
   for (let index = 0; index < articles.length; index++) {
@@ -18,30 +20,9 @@ function getArticles() {
     .catch((error) => alert(error));
 }
 
-function afficherNounoursNameParagraphe(articles) {
-  document.getElementById("main").innerHTML += `
-    <p>${articles.name}</p>
+// --------------------------------fin appel des données ------------------------------------//
 
-    `;
-}
-
-function afficherDivAvecNomEtPrixNounours(articles) {
-  document.getElementById("main").innerHTML += `
-    <article class="blog">
-    <h2 id="blog_title" class="blog_title">${articles.name}</h2>
-    <P id="nameParagraphe" class="blog_body">${articles.price / 100 + "€"}</P>
-</article>
-    `;
-}
-
-function afficherPhotoDesNounours(articles) {
-  document.getElementById("main").innerHTML += `
-    <article class="blog">
-    <img class = "image" src="${articles.imageUrl}" alt="image de ${articles.name}">
-</article>
-    
-    `;
-}
+// -----------------------------------------------Affichage des nounours--------------------------------//
 
 function afficherLeToutSousFormeDeDivisions(articles) {
   document.getElementById("main").innerHTML += `
@@ -56,13 +37,17 @@ function afficherLeToutSousFormeDeDivisions(articles) {
           <p class="price">${articles.price / 100}€</p>
           <a href="produit.html?${articles._id}"
             ><button id="button" class="btn">
-              <span>Voir porduit</span>
+              <span>Voir produit</span>
             </button>
           </a>
         </div>
       </div> 
     `;
 }
+
+// -----------------------------------------------fin affichage des nounours--------------------------------//
+
+// -------------------------------------------------code pour le nombre d'article dans le panier-------------------//
 
 // Variable contenant les produits dans le localStorage
 let produitEnregistrerDansLelocalStorage = JSON.parse(
@@ -73,13 +58,15 @@ let produitEnregistrerDansLelocalStorage = JSON.parse(
 
 affichageNombreProduitPanierClient();
 function affichageNombreProduitPanierClient() {
-  if (produitEnregistrerDansLelocalStorage.length > 0) {
+  if (produitEnregistrerDansLelocalStorage != null) {
     document.querySelector(".nb__produit").innerHTML = `
     <span class="nb__produit">${produitEnregistrerDansLelocalStorage.length}</span>
     `;
   } else {
     document.querySelector(".nb__produit").innerHTML = `
-    <span class="nb__produit">0</span>;
+    <span class="nb__produit">0</span>
     `;
   }
 }
+
+// ------------------------------------------------- fin code pour le nombre d'article dans le panier-------------------//

@@ -113,10 +113,6 @@ console.log(localStorage)
 
 
 
-
-
-
-
 // fetch('https://jsonplaceholder.typicode.com/users')
 //     .then(function (reponse){
 //         return reponse.json()
@@ -125,3 +121,27 @@ console.log(localStorage)
 //         console.log(data.name)
 //     });
 
+// function afficherNounoursNameParagraphe(articles) {
+//   document.getElementById("main").innerHTML += `
+//     <p>${articles.name}</p>
+
+//     `;
+// }
+
+// function afficherDivAvecNomEtPrixNounours(articles) {
+//   document.getElementById("main").innerHTML += `
+//     <article class="blog">
+//     <h2 id="blog_title" class="blog_title">${articles.name}</h2>
+//     <P id="nameParagraphe" class="blog_body">${articles.price / 100 + "€"}</P>
+// </article>
+//     `;
+// }
+
+// function afficherPhotoDesNounours(articles) {
+//   document.getElementById("main").innerHTML += `
+//     <article class="blog">
+//     <img class = "image" src="${articles.imageUrl}" alt="image de ${articles.name}">
+// </article>
+    
+//     `;
+// }

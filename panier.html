@@ -28,11 +28,11 @@
       /></a>
     </header>
     <h1>Mon Panier</h1>
+    <button class="btn__viderlepanier">vider le panier</button>
     <main id="main">
       <div class="tableau__panier">
         <p>Produit</p>
         <p>Option</p>
-        <p>Quantité</p>
         <p>Prix</p>
       </div>
       <!-- <div class="panier__vide">
@@ -41,21 +41,23 @@
       <div class="produit__panier">
         <p>vproduit</p>
         <p>vcouleur</p>
-        <p>vquantité</p>
         <p>vprix</p>
       </div> 
       <div class="prix__total">
         <p>Le Prix Total est : </p>
       </div>
-      <div class="container___formulaire" id="formulaire__commande">
-        <input type="text" placeholder="Nom" required><br>
-        <input type="text" placeholder="Prenom" required><br>
-        <input type="text" placeholder="Adresse de livraison" required><br>
-        <input type="text" placeholder="Ville" required><br>
-        <input type="text" placeholder="Code Postale" required><br>
-        <input type="text" placeholder="Email" required><br>
-        <input type="submit" value="Valider la commande">
-      </div> -->
+      <form action="post">
+        <fieldset class="container___formulaire">
+          <legend> Mon Formulaire de commande</legend>
+          <p><input type="text" name="nom" placeholder="Nom" class="nom" required></p>
+          <p><input type="text" name="nom" placeholder="Prénom" class="prenom" required></p>
+          <p><input type="text" name="nom" placeholder="Adresse de livraison" class="adresse" required></p>
+          <p><input type="text" name="nom" placeholder="Ville" class="ville" required></p>
+          <p><input type="text" name="nom" placeholder="Code Postal" class="codePostal" required></p>
+          <p><input type="text" name="nom" placeholder="Email" class="email" required></p>
+          <p><input type="submit" value="Envoyer" class="button"></p>
+        </fieldset>
+      </form> -->
     </main>
     <footer class="footer">
       <div class="about">
