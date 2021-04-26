@@ -168,11 +168,12 @@ boutonValiderCommande.addEventListener("click", (e) => {
     ("");
   }
 
-  // Variable contenant les produits dans le localStorage
+  // ------------------------------------Variable contenant les produits dans le localStorage---------------------//
   let produitEnregistrerDansLelocalStorage = JSON.parse(
     localStorage.getItem("produit")
   );
 
+  // -----------------------------------creation du tableau produit pour l'envoie au serveur-----------------------//
   let products = [];
   produitEnregistrerDansLelocalStorage.forEach(
     (produitEnregistrerDansLelocalStorage) => {
@@ -180,7 +181,7 @@ boutonValiderCommande.addEventListener("click", (e) => {
     }
   );
 
-  // envoie sur le serveur
+  // ----------------------------------------------envoie sur le serveur-----------------------------//
 
   let promise = fetch("https://oc-p5-api.herokuapp.com/api/teddies/order", {
     method: "POST",
@@ -190,8 +191,31 @@ boutonValiderCommande.addEventListener("click", (e) => {
       Accept: "application/json",
     },
   })
+    // ----------------------------------------------reception des info du serveur-----------------------------//
+
     .then((reponse) => reponse.json())
     .then((reponse) => {
-      console.log(reponse);
+      // --------------------------------ouverture modal---------------------------------//
+      let body = document.body;
+      let div = document.createElement("div");
+      div.innerHTML = `<aside id="modal1" class="modal";">
+        <div class="modal-wrapper">
+          <h2>Confirmation de commande</h2>
+          <p>
+            Votre commande d'un total ${total}€ a bien été prise en compte <br /> <br> sous le
+            numéro: "${reponse.orderId}"<br /> <br>
+            Toute l'équipe d'ORINOCO vous remercie!!
+          </p>
+          <button id="btn_confirmation_commande">De rien!</button>
+        </div>
+      </aside>`;
+      body.append(div);
+      // --------------------------------fermeture modal---------------------------------//
+      let closeModal = document.getElementById("btn_confirmation_commande");
+      closeModal.addEventListener("click", (e) => {
+        e.preventDefault();
+        window.location.href = "index.html";
+        localStorage.removeItem("produit");
+      });
     });
 });
