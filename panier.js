@@ -98,7 +98,7 @@ boutonValiderCommande.addEventListener("click", (e) => {
   let firstName = contact.firstName;
   let address = contact.address;
   let city = contact.city;
-  // let leCodePostal = valeursFormulaires.codePostal;
+  // let leCodePostal = contact.codePostal;
   let email = contact.email;
 
   function controleNom() {
