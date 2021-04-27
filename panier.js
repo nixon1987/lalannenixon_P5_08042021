@@ -88,7 +88,7 @@ boutonValiderCommande.addEventListener("click", (e) => {
     firstName: document.querySelector(".prenom").value,
     address: document.querySelector(".adresse").value,
     city: document.querySelector(".ville").value,
-    // codePostal: document.querySelector(".codePostal").value,
+    codePostal: document.querySelector(".codePostal").value,
     email: document.querySelector(".email").value,
   };
 
@@ -98,14 +98,14 @@ boutonValiderCommande.addEventListener("click", (e) => {
   let firstName = contact.firstName;
   let address = contact.address;
   let city = contact.city;
-  // let leCodePostal = contact.codePostal;
+  let leCodePostal = contact.codePostal;
   let email = contact.email;
 
   function controleNom() {
     if (/^[A-Za-z]{3,20}$/.test(lastName)) {
       return true;
     } else {
-      alert("le champ nom n'est pas correctment renseigné");
+      alert("le champ nom n'est pas correctement renseigné");
       return false;
     }
   }
@@ -114,7 +114,7 @@ boutonValiderCommande.addEventListener("click", (e) => {
     if (/^[A-Za-z]{3,20}$/.test(firstName)) {
       return true;
     } else {
-      alert("le champ prenom n'est pas correctment renseigné");
+      alert("le champ prenom n'est pas correctement renseigné");
       return false;
     }
   }
@@ -123,7 +123,7 @@ boutonValiderCommande.addEventListener("click", (e) => {
     if (/^[A-Za-z0-9\s]{5,20}$/.test(address)) {
       return true;
     } else {
-      alert("Le champ adresse n'est pas correctment renseigné");
+      alert("Le champ adresse n'est pas correctement renseigné");
       return false;
     }
   }
@@ -132,19 +132,19 @@ boutonValiderCommande.addEventListener("click", (e) => {
     if (/^[A-Za-z]{3,20}$/.test(city)) {
       return true;
     } else {
-      alert("Le champ ville n'est pas correctment renseigné");
+      alert("Le champ ville n'est pas correctement renseigné");
       return false;
     }
   }
 
-  // function controleCodePostale() {
-  //   if (/^[0-9]{5}$/.test(leCodePostal)) {
-  //     return true;
-  //   } else {
-  //     alert("Le champ code postale doit être composé de 5 chiffres");
-  //     return false;
-  //   }
-  // }
+  function controleCodePostale() {
+    if (/^[0-9]{5}$/.test(leCodePostal)) {
+      return true;
+    } else {
+      alert("Le champ code postale doit être composé de 5 chiffres");
+      return false;
+    }
+  }
 
   function controleEmail() {
     if (/^[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+$/.test(email)) {
@@ -160,12 +160,13 @@ boutonValiderCommande.addEventListener("click", (e) => {
     controlePrenom() &&
     controleAdresse() &&
     controleVille() &&
-    // controleCodePostale() &&
+    controleCodePostale() &&
     controleEmail()
   ) {
     localStorage.setItem("formulaire", JSON.stringify(contact));
   } else {
-    ("");
+    alert("Le formulaire doit être renseigné correctement");
+    return false;
   }
 
   // ------------------------------------Variable contenant les produits dans le localStorage---------------------//
@@ -216,6 +217,7 @@ boutonValiderCommande.addEventListener("click", (e) => {
         e.preventDefault();
         window.location.href = "index.html";
         localStorage.removeItem("produit");
+        localStorage.removeItem("formulaire");
       });
     });
 });
