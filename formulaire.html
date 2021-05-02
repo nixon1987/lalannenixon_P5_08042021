@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="formulaire.css" />
+    <script
+      src="https://kit.fontawesome.com/ebc15ea3ac.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h2>Mon Formulaire de commande</h2>
+      </div>
+      <form action="post" id="form" class="form">
+        <div class="form__control success">
+          <label for="username">username</label>
+          <input type="text" placeholder="username" id="name" required />
+          <i class="fa fa-check" aria-hidden="true"></i>
+          <i class="fas fa-exclamation-circle"></i>
+          <small>Error message</small>
+        </div>
+        <div class="form__control error">
+          <label for="prenom">Prénom</label>
+          <input type="text" placeholder="prenom" id="firstName" required />
+          <i class="fas fa-check-circle"></i>
+          <i class="fas fa-exclamation-circle"></i>
+          <small>Error message</small>
+        </div>
+        <div class="form__control">
+          <label for="adresse">adresse</label>
+          <input type="text" placeholder="adresse" id="adresse" required />
+          <i class="fa fa-check" aria-hidden="true"></i>
+          <i class="fas fa-exclamation-circle"></i>
+          <small>Error message</small>
+        </div>
+        <div class="form__control">
+          <label for="ville">ville</label>
+          <input type="text" placeholder="ville" id="ville" required />
+          <i class="fa fa-check" aria-hidden="true"></i>
+          <i class="fas fa-exclamation-circle"></i>
+          <small>Error message</small>
+        </div>
+        <div class="form__control">
+          <label for="code postal">code postal</label>
+          <input
+            type="text"
+            placeholder="code postal"
+            id="codePostal"
+            required
+          />
+          <i class="fa fa-check" aria-hidden="true"></i>
+          <i class="fas fa-exclamation-circle"></i>
+          <small>Error message</small>
+        </div>
+        <div class="form__control">
+          <label for="email">email</label>
+          <input type="email" placeholder="email" id="email" required />
+          <i class="fa fa-check" aria-hidden="true"></i>
+          <i class="fas fa-exclamation-circle"></i>
+          <small>Error message</small>
+        </div>
+        <button id="submitButton">submit</button>
+      </form>
+    </div>
+    <script src="formulaire.js"></script>
+  </body>
+</html>

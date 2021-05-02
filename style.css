@@ -14,6 +14,58 @@ main {
   margin: 0 auto;
 }
 
+/* loader */
+
+.main__spinner{
+    content:"";
+    box-sizing:border-box;
+    position:fixed;
+    top:50%;
+    left:50%;
+    display: flex;
+    justify-content: center;
+    margin-left:-50px;
+    margin-top:-50px;
+    height: 100px;px;
+    width: 100px;
+    border-radius:50%;
+    border: 5px solid #99E2D0;
+    border-top-color: #FF79DA;
+    border-bottom-color:#9356DC;
+    animation: spinner 0.8s linear forwards;
+    animation-iteration-count:3;
+
+}
+  
+  @keyframes spinner{
+    0%{
+      transform: rotate(360deg);
+      opacity:1;
+      z-index:1;
+    }
+
+    100%{
+      opacity: 0;
+    }
+    
+} 
+  
+
+body > *{
+    animation: refresh 5s forwards;
+ 
+} 
+
+
+@keyframes refresh{
+    0%{
+        opacity:0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
 header {
   display: flex;
   justify-content: space-between;
@@ -130,3 +182,4 @@ nav i {
 header a {
   text-decoration: none;
 }
+

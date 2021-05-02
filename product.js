@@ -36,7 +36,8 @@ async function main() {
   // selection des options via une boucle
   let structureOptions = [];
   for (let i = 0; i < optionsCouleurs.length; i++) {
-    structureOptions += `<option value=${optionsCouleurs[i]}>${optionsCouleurs[i]}</option> `;
+    console.log(optionsCouleurs[i]);
+    structureOptions += `<option value="${optionsCouleurs[i]}">${optionsCouleurs[i]}</option> `;
   }
 
   // positionnement des options dans le html
@@ -71,7 +72,7 @@ function afficherLeChoixUnArticle(articles) {
 
 // ----------------------------------fin affichage du produit selectionné--------------------------//
 
-// ----------------------------------Gestion du click sur le bouton ajouter au panier--------------------------//
+// ----------------------------------gestion du click sur le bouton ajouter au panier--------------------------//
 
 // choix du client produit & Option + eventlistener des actions du client
 function choixProduit() {
@@ -94,21 +95,6 @@ function choixProduit() {
   });
 }
 
-// affichage du nombre de produit dans le panier page produit
-
-function nombreDeProduitPanier() {
-  let nombreDeProduitInitialPanier = JSON.parse(
-    localStorage.getItem("produit")
-  );
-  console.log(nombreDeProduitInitialPanier);
-  let indicateurPanier = document.getElementById("nb__produit");
-  if (nombreDeProduitInitialPanier !== null) {
-    indicateurPanier.innerHTML = nombreDeProduitInitialPanier.length + 1;
-  } else {
-    indicateurPanier.innerHTML = 1;
-  }
-}
-
 // Passage des données dans le localStorage au format JSON
 function ProduitDansLocalStorage(optionProduit) {
   let produitEnregistrerDansLelocalStorage = JSON.parse(
@@ -128,6 +114,21 @@ function ProduitDansLocalStorage(optionProduit) {
       "produit",
       JSON.stringify(produitEnregistrerDansLelocalStorage)
     );
+  }
+}
+
+// affichage du nombre de produit dans le panier page produit
+
+function nombreDeProduitPanier() {
+  let nombreDeProduitInitialPanier = JSON.parse(
+    localStorage.getItem("produit")
+  );
+  console.log(nombreDeProduitInitialPanier);
+  let indicateurPanier = document.getElementById("nb__produit");
+  if (nombreDeProduitInitialPanier !== null) {
+    indicateurPanier.innerHTML = nombreDeProduitInitialPanier.length + 1;
+  } else {
+    indicateurPanier.innerHTML = 1;
   }
 }
 

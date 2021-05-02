@@ -65,12 +65,12 @@ let formulaire = `
       <form action="post" id="formulaire__commande">
         <fieldset class="container___formulaire">
           <legend> Mon Formulaire de commande</legend>
-          <p><input type="text" name="nom" placeholder="Nom" class="nom" required></p>
+          <p><input id"nom" type="text" name="nom" placeholder="Nom" class="nom" required></p>
           <p><input type="text" name="nom" placeholder="Prénom" class="prenom" required></p>
           <p><input type="text" name="nom" placeholder="Adresse de livraison" class="adresse" required></p>
           <p><input type="text" name="nom" placeholder="Ville" class="ville" required></p>
           <p><input type="text" name="nom" placeholder="Code Postal" class="codePostal" required></p>
-          <p><input type="text" name="nom" placeholder="Email" class="email" required></p>
+          <p><input id = "email" type="text" name="nom" placeholder="Email" class="email" required></p>
           <p><input type="submit" value="Envoyer" class="button"></p>
         </fieldset>
       </form>`;
@@ -84,15 +84,15 @@ let boutonValiderCommande = document.querySelector(".button");
 boutonValiderCommande.addEventListener("click", (e) => {
   e.preventDefault();
   let contact = {
-    lastName: document.querySelector(".nom").value,
-    firstName: document.querySelector(".prenom").value,
-    address: document.querySelector(".adresse").value,
-    city: document.querySelector(".ville").value,
-    codePostal: document.querySelector(".codePostal").value,
-    email: document.querySelector(".email").value,
+    lastName: document.getElementById("nom"),
+    firstName: document.querySelector(".prenom"),
+    address: document.querySelector(".adresse"),
+    city: document.querySelector(".ville"),
+    codePostal: document.querySelector(".codePostal"),
+    email: document.querySelector(".email"),
   };
 
-  // Gestion validation du formulaire
+  //Gestion validation du formulaire
 
   let lastName = contact.lastName;
   let firstName = contact.firstName;
@@ -163,7 +163,6 @@ boutonValiderCommande.addEventListener("click", (e) => {
     controleCodePostale() &&
     controleEmail()
   ) {
-    localStorage.setItem("formulaire", JSON.stringify(contact));
   } else {
     alert("Le formulaire doit être renseigné correctement");
     return false;
@@ -207,7 +206,7 @@ boutonValiderCommande.addEventListener("click", (e) => {
             numéro: "${reponse.orderId}"<br /> <br>
             Toute l'équipe d'ORINOCO vous remercie!!
           </p>
-          <button id="btn_confirmation_commande">De rien!</button>
+          <button id="btn_confirmation_commande">Retour en page d'acceuil</button>
         </div>
       </aside>`;
       body.append(div);
@@ -217,7 +216,6 @@ boutonValiderCommande.addEventListener("click", (e) => {
         e.preventDefault();
         window.location.href = "index.html";
         localStorage.removeItem("produit");
-        localStorage.removeItem("formulaire");
       });
     });
 });
